@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.NewTaskFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/fragment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/create_new_task"
+            android:textSize="32sp"
+            app:fontFamily="sans-serif-black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_title"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/fragment_title"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_title" />
+
+        <EditText
+            android:id="@+id/edit_text_title"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/title_hint"
+            android:inputType="text"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/fragment_title"
+            app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+
+        <TextView
+            android:id="@+id/text_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_description"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/fragment_title"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_title" />
+
+        <EditText
+            android:id="@+id/edit_text_description"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/description_hint"
+            android:textSize="18sp"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="@+id/fragment_title"
+            app:layout_constraintTop_toBottomOf="@id/text_description" />
+
+
+        <TextView
+            android:id="@+id/text_due_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_due_date"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="@+id/fragment_title"
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_description" />
+
+        <EditText
+            android:id="@+id/edit_text_due_date"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/due_date_hint"
+            android:textSize="18sp"
+            android:inputType="date"
+            android:focusable="false"
+            app:layout_constraintStart_toStartOf="@+id/fragment_title"
+            app:layout_constraintTop_toBottomOf="@id/text_due_date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -6,7 +6,13 @@
     <string name="current_todos">Your current tasks:</string>
     <string name="add_task_button_text">Create new TODO</string>
     <string name="clear_button_text">Delete all Tasks</string>
-
+    <string name="text_title">Enter a title for your TODO</string>
+    <string name="title_hint">Christmas shopping</string>
+    <string name="create_new_task">Create new Task</string>
+    <string name="text_description">Enter description of your TODO</string>
+    <string name="description_hint">Buy gifts for family</string>
+    <string name="text_due_date">Enter TODO\'s due date</string>
+    <string name="due_date_hint">dd/mm/yyyy</string>
 
 
 </resources>

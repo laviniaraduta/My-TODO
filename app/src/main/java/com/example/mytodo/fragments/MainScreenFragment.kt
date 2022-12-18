@@ -6,6 +6,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import com.example.mytodo.R
 import com.example.mytodo.database.TaskDatabase
 import com.example.mytodo.databinding.FragmentMainScreenBinding
@@ -48,7 +49,9 @@ class MainScreenFragment : Fragment() {
         binding.mainScreenViewModel = mainScreenViewModel
 
 
-
+        binding.addTaskButton.setOnClickListener {
+            view: View -> view.findNavController().navigate(R.id.action_mainScreenFragment_to_newTaskFragment)
+        }
         return binding.root
     }
 

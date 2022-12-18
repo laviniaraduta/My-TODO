@@ -15,18 +15,23 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/clear_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
             android:text="@string/clear_button_text"
             app:layout_constraintStart_toEndOf="@+id/add_task_button"
-            app:layout_constraintTop_toBottomOf="@+id/tasks_list" />
+            app:layout_constraintTop_toBottomOf="@+id/tasks_list"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <Button
             android:id="@+id/add_task_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:text="@string/add_task_button_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tasks_list" />
@@ -46,11 +51,10 @@
             android:id="@+id/tasks_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
