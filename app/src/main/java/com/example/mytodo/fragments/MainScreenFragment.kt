@@ -18,7 +18,7 @@ class MainScreenFragment : Fragment() {
         fun newInstance() = MainScreenFragment()
     }
 
-    private lateinit var viewModel: MainScreenViewModel
+    private lateinit var mainScreenViewModel: MainScreenViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,14 +29,10 @@ class MainScreenFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
         val dataSource = TaskDatabase.getInstance(application).taskDatabaseDao
-
         val viewModelFactory = MainScreenViewModelFactory(dataSource, application)
+        mainScreenViewModel = ViewModelProvider(this, viewModelFactory)[MainScreenViewModel::class.java]
 
-        val mainScreenViewModel =
-            ViewModelProvider(
-                this, viewModelFactory).get(MainScreenViewModel::class.java)
-
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
         val adapter = TaskAdapter()
         binding.tasksList.adapter = adapter
 
@@ -67,7 +63,7 @@ class MainScreenFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainScreenViewModel::class.java)
+//        viewModel = ViewModelProvider(this).get(MainScreenViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

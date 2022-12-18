@@ -34,7 +34,7 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
         // viewType is used when there are different types of views in the list
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater
-            .inflate(R.layout.list_item_task, parent, false) as TextView
+            .inflate(R.layout.list_item_task, parent, false)
         return ViewHolder(view)
     }
 

@@ -16,5 +16,11 @@
     <fragment
         android:id="@+id/newTaskFragment"
         android:name="com.example.mytodo.fragments.NewTaskFragment"
-        android:label="NewTaskFragment" />
+        android:label="NewTaskFragment" >
+        <action
+            android:id="@+id/action_newTaskFragment_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment"
+            app:popUpTo="@id/mainScreenFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
 </navigation>

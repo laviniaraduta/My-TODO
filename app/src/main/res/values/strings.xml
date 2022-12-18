@@ -13,6 +13,7 @@
     <string name="description_hint">Buy gifts for family</string>
     <string name="text_due_date">Enter TODO\'s due date</string>
     <string name="due_date_hint">dd/mm/yyyy</string>
+    <string name="save">Save</string>
 
 
 </resources>
