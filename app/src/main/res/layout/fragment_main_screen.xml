@@ -4,9 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.MainScreenFragment">
 
+    <data>
+        <variable
+            name="mainScreenViewModel"
+            type="com.example.mytodo.fragments.MainScreenViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/clear_button_text"
+            app:layout_constraintStart_toEndOf="@+id/add_task_button"
+            app:layout_constraintTop_toBottomOf="@+id/tasks_list" />
+
+        <Button
+            android:id="@+id/add_task_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_task_button_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tasks_list" />
 
         <TextView
             android:id="@+id/textView"
@@ -19,13 +42,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/todo_list"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textSize="16sp"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/textView" />-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tasks_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -4,5 +4,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about_us">About Us</string>
     <string name="current_todos">Your current tasks:</string>
+    <string name="add_task_button_text">Create new TODO</string>
+    <string name="clear_button_text">Delete all Tasks</string>
+
+
 
 </resources>
