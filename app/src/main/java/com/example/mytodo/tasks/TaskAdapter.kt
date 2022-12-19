@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mytodo.R
 import com.example.mytodo.database.Task
@@ -26,6 +27,13 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
         holder.taskDescription.text = item.taskDescription
         holder.dueDate.text = item.dueDate
         holder.category.text = item.category
+
+        holder.itemView.setOnClickListener {
+            // Edit the text in the TextView when the CardView is clicked
+//            holder.taskTitle.text = "New task name"
+            holder.itemView.findNavController().navigate(R.id.action_mainScreenFragment_to_editTaskFragment)
+        }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

@@ -21,6 +21,7 @@
     <string name="edit_task_description">Edit Task Description:</string>
     <string name="edit_task_date">Edit Task Due Date:</string>
     <string name="category">Enter Task Category</string>
+    <string name="edit_category">Edit Task Category</string>
     <string name="hint_category">chores</string>
 
 

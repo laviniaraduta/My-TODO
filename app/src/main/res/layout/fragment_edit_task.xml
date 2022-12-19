@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragments.EditTaskFragment">
+    tools:context=".fragments.NewTaskFragment">
 
     <data>
         <variable
@@ -13,18 +13,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:background="@color/teal">
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/fragment_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
             android:text="@string/edit_task"
             android:textSize="32sp"
-            android:textColor="@color/yellow"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
+            app:fontFamily="sans-serif-black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +33,6 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_task_title"
             android:textSize="20sp"
-            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/fragment_title" />
@@ -46,7 +44,6 @@
             android:hint="@string/title_hint"
             android:inputType="text"
             android:minHeight="48dp"
-            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@id/text_title" />
@@ -58,7 +55,6 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_task_description"
             android:textSize="20sp"
-            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_title" />
@@ -70,7 +66,6 @@
             android:hint="@string/description_hint"
             android:inputType="text"
             android:minHeight="48dp"
-            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@id/text_description" />
@@ -82,7 +77,6 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_task_date"
             android:textSize="20sp"
-            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_description" />
@@ -94,33 +88,30 @@
             android:focusable="false"
             android:hint="@string/due_date_hint"
             android:inputType="date"
-            android:textColor="@color/black"
             android:minHeight="48dp"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@id/text_due_date" />
 
+
         <TextView
             android:id="@+id/text_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/category"
+            android:text="@string/edit_category"
             android:textSize="20sp"
-            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_due_date" />
 
-        <EditText
+        <Spinner
             android:id="@+id/edit_text_category"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:focusable="false"
             android:hint="@string/hint_category"
-            android:inputType="date"
+            android:inputType="text"
             android:minHeight="48dp"
             android:textSize="18sp"
-            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@id/text_category" />
 

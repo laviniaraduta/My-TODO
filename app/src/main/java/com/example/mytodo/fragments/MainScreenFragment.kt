@@ -13,36 +13,32 @@ import com.example.mytodo.databinding.FragmentMainScreenBinding
 import com.example.mytodo.tasks.TaskAdapter
 
 class MainScreenFragment : Fragment() {
-
-    companion object {
-        fun newInstance() = MainScreenFragment()
-    }
-
-    private lateinit var mainScreenViewModel: MainScreenViewModel
+    private lateinit var binding: FragmentMainScreenBinding
+    private lateinit var viewModel: MainScreenViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentMainScreenBinding>(inflater, R.layout.fragment_main_screen, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_screen, container, false)
         setHasOptionsMenu(true)
 
         val application = requireNotNull(this.activity).application
         val dataSource = TaskDatabase.getInstance(application).taskDatabaseDao
         val viewModelFactory = MainScreenViewModelFactory(dataSource, application)
-        mainScreenViewModel = ViewModelProvider(this, viewModelFactory)[MainScreenViewModel::class.java]
+        viewModel = ViewModelProvider(this, viewModelFactory)[MainScreenViewModel::class.java]
 
         binding.lifecycleOwner = this
         val adapter = TaskAdapter()
         binding.tasksList.adapter = adapter
 
 
-        mainScreenViewModel.tasks.observe(viewLifecycleOwner, Observer {
+        viewModel.tasks.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.data = it
             }
         })
-        binding.mainScreenViewModel = mainScreenViewModel
+        binding.mainScreenViewModel = viewModel
 
 
         binding.addTaskButton.setOnClickListener {
@@ -67,4 +63,8 @@ class MainScreenFragment : Fragment() {
         // TODO: Use the ViewModel
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
 }
