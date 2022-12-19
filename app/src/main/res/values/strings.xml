@@ -25,4 +25,14 @@
     <string name="hint_category">chores</string>
 
 
+    <string-array name="categories">
+        <item>family</item>
+        <item>school</item>
+        <item>chores</item>
+        <item>voluntary</item>
+        <item>personal care</item>
+        <item>event</item>
+    </string-array>
+
+
 </resources>

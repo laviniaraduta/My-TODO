@@ -36,5 +36,14 @@
         <argument
             android:name="taskTitle"
             app:argType="string" />
+        <argument
+            android:name="taskDescription"
+            app:argType="string" />
+        <argument
+            android:name="taskDueDate"
+            app:argType="string" />
+        <argument
+            android:name="taskCategory"
+            app:argType="string" />
     </fragment>
 </navigation>

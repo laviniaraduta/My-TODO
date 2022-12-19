@@ -66,7 +66,8 @@ class NewTaskFragment: Fragment() {
             datePicker.show()
         }
 
-        val suggestions = arrayOf("family", "school", "chores", "voluntary", "work", "personal care", "event")
+//        val suggestions = arrayOf("family", "school", "chores", "voluntary", "work", "personal care", "event")
+        val suggestions = resources.getStringArray(R.array.categories)
         val adapter = ArrayAdapter<String>(this.requireContext(), android.R.layout.simple_spinner_item, suggestions)
         binding.editTextCategory.adapter = adapter
 
@@ -74,7 +75,7 @@ class NewTaskFragment: Fragment() {
 
         binding.saveButton.setOnClickListener { view: View ->
             onSaveTask()
-            view.findNavController().navigate(R.id.action_newTaskFragment_to_mainScreenFragment)
+            view.findNavController().navigate(NewTaskFragmentDirections.actionNewTaskFragmentToMainScreenFragment())
         }
 
 

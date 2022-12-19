@@ -37,7 +37,7 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
                 .findNavController()
                 .navigate(
                     MainScreenFragmentDirections
-                    .actionMainScreenFragmentToEditTaskFragment(item.taskTitle))
+                    .actionMainScreenFragmentToEditTaskFragment(item.taskTitle, item.taskDescription, item.dueDate, item.category))
         }
 
     }
