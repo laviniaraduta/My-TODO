@@ -42,7 +42,7 @@ class MainScreenFragment : Fragment() {
 
 
         binding.addTaskButton.setOnClickListener {
-            view: View -> view.findNavController().navigate(R.id.action_mainScreenFragment_to_newTaskFragment)
+            view: View -> view.findNavController().navigate(MainScreenFragmentDirections.actionMainScreenFragmentToNewTaskFragment())
         }
         return binding.root
     }

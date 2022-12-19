@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mytodo.R
 import com.example.mytodo.database.Task
+import com.example.mytodo.fragments.MainScreenFragmentDirections
 
 class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
     var data = listOf<Task>()
@@ -31,7 +32,12 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
         holder.itemView.setOnClickListener {
             // Edit the text in the TextView when the CardView is clicked
 //            holder.taskTitle.text = "New task name"
-            holder.itemView.findNavController().navigate(R.id.action_mainScreenFragment_to_editTaskFragment)
+            holder
+                .itemView
+                .findNavController()
+                .navigate(
+                    MainScreenFragmentDirections
+                    .actionMainScreenFragmentToEditTaskFragment(item.taskTitle))
         }
 
     }
