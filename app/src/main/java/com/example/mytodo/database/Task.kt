@@ -7,12 +7,12 @@ import java.time.LocalDate
 
 @Entity(tableName = "current_tasks_table")
 data class Task(
-    @PrimaryKey(autoGenerate = true)
-    var taskId: Long = 0L,
-    @ColumnInfo(name = "task_title")
+    @PrimaryKey(autoGenerate = false)
     var taskTitle: String,
     @ColumnInfo(name = "task_description")
     var taskDescription:String,
     @ColumnInfo(name = "due_date")
-    var dueDate: String
+    var dueDate: String,
+    @ColumnInfo(name = "category")
+    var category: String
 )

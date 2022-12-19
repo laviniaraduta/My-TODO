@@ -12,10 +12,16 @@
     <string name="text_description">Enter description of your TODO</string>
     <string name="description_hint">Buy gifts for family</string>
     <string name="text_due_date">Enter TODO\'s due date</string>
-    <string name="due_date_hint">dd/mm/yyyy</string>
+    <string name="due_date_hint">yyyy-MM-dd</string>
     <string name="save">Save</string>
     <string name="due_date">Due date: %s</string>
     <string name="floating_action_button">Add a new task</string>
+    <string name="edit_task">Edit Task:</string>
+    <string name="edit_task_title">Edit Task Title:</string>
+    <string name="edit_task_description">Edit Task Description:</string>
+    <string name="edit_task_date">Edit Task Due Date:</string>
+    <string name="category">Enter Task Category</string>
+    <string name="hint_category">chores</string>
 
 
 </resources>

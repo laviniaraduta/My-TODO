@@ -25,6 +25,7 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
         holder.taskTitle.text = item.taskTitle
         holder.taskDescription.text = item.taskDescription
         holder.dueDate.text = item.dueDate
+        holder.category.text = item.category
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -40,5 +41,6 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
         val taskTitle: TextView = itemView.findViewById(R.id.task_title)
         val taskDescription: TextView = itemView.findViewById(R.id.task_description)
         val dueDate: TextView = itemView.findViewById(R.id.due_date)
+        val category: TextView = itemView.findViewById(R.id.category)
     }
 }

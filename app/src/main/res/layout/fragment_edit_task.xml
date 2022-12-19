@@ -2,28 +2,29 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".fragments.NewTaskFragment">
+    tools:context=".fragments.EditTaskFragment">
 
     <data>
         <variable
-            name="newTaskViewModel"
-            type="com.example.mytodo.fragments.NewTaskViewModel" />
+            name="editTaskViewModel"
+            type="com.example.mytodo.fragments.EditTaskViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:background="@color/teal">
 
         <TextView
             android:id="@+id/fragment_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/create_new_task"
+            android:text="@string/edit_task"
             android:textSize="32sp"
-            app:fontFamily="sans-serif-black"
+            android:textColor="@color/yellow"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,8 +32,9 @@
             android:id="@+id/text_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_title"
+            android:text="@string/edit_task_title"
             android:textSize="20sp"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/fragment_title" />
@@ -44,6 +46,7 @@
             android:hint="@string/title_hint"
             android:inputType="text"
             android:minHeight="48dp"
+            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@id/text_title" />
@@ -53,8 +56,9 @@
             android:id="@+id/text_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_description"
+            android:text="@string/edit_task_description"
             android:textSize="20sp"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_title" />
@@ -66,6 +70,7 @@
             android:hint="@string/description_hint"
             android:inputType="text"
             android:minHeight="48dp"
+            android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@id/text_description" />
@@ -75,8 +80,9 @@
             android:id="@+id/text_due_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/text_due_date"
+            android:text="@string/edit_task_date"
             android:textSize="20sp"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_description" />
@@ -88,11 +94,11 @@
             android:focusable="false"
             android:hint="@string/due_date_hint"
             android:inputType="date"
+            android:textColor="@color/black"
             android:minHeight="48dp"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@id/text_due_date" />
-
 
         <TextView
             android:id="@+id/text_category"
@@ -100,18 +106,21 @@
             android:layout_height="wrap_content"
             android:text="@string/category"
             android:textSize="20sp"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_due_date" />
 
-        <Spinner
+        <EditText
             android:id="@+id/edit_text_category"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:focusable="false"
             android:hint="@string/hint_category"
-            android:inputType="text"
+            android:inputType="date"
             android:minHeight="48dp"
             android:textSize="18sp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@id/text_category" />
 

@@ -54,6 +54,20 @@
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/black"
                 tools:text="Due Date: 20/12/2022"/>
+
+            <TextView
+                android:id="@+id/category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/due_date"
+                app:layout_constraintTop_toBottomOf="@id/task_description"
+                tools:text="category" />
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="wrap_content"

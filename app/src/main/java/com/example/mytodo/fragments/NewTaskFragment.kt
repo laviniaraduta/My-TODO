@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -43,9 +44,9 @@ class NewTaskFragment: Fragment() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.editTextDueDate.setOnClickListener {
 
         val dateEdit = binding.editTextDueDate
-        binding.editTextDueDate.setOnClickListener {
             val calendar = java.util.Calendar.getInstance()
             val year = calendar.get(Calendar.YEAR)
             val month = calendar.get(Calendar.MONTH)
@@ -65,6 +66,12 @@ class NewTaskFragment: Fragment() {
             datePicker.show()
         }
 
+        val suggestions = arrayOf("family", "school", "chores", "voluntary", "work", "personal care", "event")
+        val adapter = ArrayAdapter<String>(this.requireContext(), android.R.layout.simple_spinner_item, suggestions)
+        binding.editTextCategory.adapter = adapter
+
+
+
         binding.saveButton.setOnClickListener { view: View ->
             onSaveTask()
             view.findNavController().navigate(R.id.action_newTaskFragment_to_mainScreenFragment)
@@ -77,8 +84,9 @@ class NewTaskFragment: Fragment() {
         val taskTitle: String = binding.editTextTitle.text.toString()
         val taskDescription: String = binding.editTextDescription.text.toString()
         val taskDueDate: String = binding.editTextDueDate.text.toString()
+        val taskCategory: String = binding.editTextCategory.selectedItem.toString()
 
 
-        viewModel.addNewTask(taskTitle, taskDescription, taskDueDate)
+        viewModel.addNewTask(taskTitle, taskDescription, taskDueDate, taskCategory)
     }
 }

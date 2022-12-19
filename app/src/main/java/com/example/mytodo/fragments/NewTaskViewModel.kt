@@ -27,7 +27,7 @@ class NewTaskViewModel(
 
 
     @SuppressLint("NewApi")
-    fun addNewTask(taskTitle: String, taskDescription: String, taskDueDate: String) {
+    fun addNewTask(taskTitle: String, taskDescription: String, taskDueDate: String, taskCategory: String) {
         Log.d("NewTaskViewModel", "addNewTask: $taskTitle $taskDescription $taskDueDate")
         // I receive the date in format yyyy-MM-dd
         // in this format I can also sort them
@@ -35,14 +35,15 @@ class NewTaskViewModel(
         viewModelScope.launch {
             val id = getTaskNumber()
             Log.d("NewTaskViewModel add", "addNewTask: id = $id")
-            val newTask = Task(0L, taskTitle, taskDescription, taskDueDate)
+            val newTask = Task(taskTitle, taskDescription, taskDueDate, taskCategory)
             insert(newTask)
         }
 
     }
 
-    private suspend fun getTaskNumber(): Int {
+    private fun getTaskNumber(): Int {
         val listOfTasks = database.getAllTasks()
+        Log.d("NewTaskViewModel", listOfTasks.value?.size.toString())
         return listOfTasks.value?.size ?: 0
     }
     private suspend fun insert(task: Task) {
