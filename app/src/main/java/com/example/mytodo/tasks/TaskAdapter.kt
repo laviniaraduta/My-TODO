@@ -1,12 +1,13 @@
 package com.example.mytodo.tasks
 
+import android.content.Context
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mytodo.R
-import com.example.mytodo.TextItemViewHolder
 import com.example.mytodo.database.Task
 
 class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
@@ -25,8 +26,7 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
         val res = holder.itemView.context.resources
         holder.taskTitle.text = item.taskTitle
         holder.taskDescription.text = item.taskDescription
-
-
+        holder.dueDate.text = item.dueDate
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -34,12 +34,13 @@ class TaskAdapter: RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
         // viewType is used when there are different types of views in the list
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater
-            .inflate(R.layout.list_item_task, parent, false)
+            .inflate(R.layout.card_view, parent, false)
         return ViewHolder(view)
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val taskTitle: TextView = itemView.findViewById(R.id.task_title)
         val taskDescription: TextView = itemView.findViewById(R.id.task_description)
+        val dueDate: TextView = itemView.findViewById(R.id.due_date)
     }
 }

@@ -15,6 +15,7 @@ import androidx.navigation.findNavController
 import com.example.mytodo.R
 import com.example.mytodo.database.TaskDatabase
 import com.example.mytodo.databinding.FragmentNewTaskBinding
+import java.time.LocalDate
 
 class NewTaskFragment: Fragment() {
     private lateinit var viewModel: NewTaskViewModel
@@ -54,7 +55,9 @@ class NewTaskFragment: Fragment() {
             // get the selected date and put it in the text edit's text field
             val datePicker = DatePickerDialog(this.requireContext(),
                 { _, y, m, d ->
-                    val date = "$d/${m + 1}/$y"
+                    val realMonth = m + 1
+                    val monthString = realMonth.toString().padStart(2, '0')
+                    val date = "$y-$monthString-$d"
                     dateEdit.setText(date)
                 },
                 year, month, day
@@ -74,6 +77,7 @@ class NewTaskFragment: Fragment() {
         val taskTitle: String = binding.editTextTitle.text.toString()
         val taskDescription: String = binding.editTextDescription.text.toString()
         val taskDueDate: String = binding.editTextDueDate.text.toString()
+
 
         viewModel.addNewTask(taskTitle, taskDescription, taskDueDate)
     }
