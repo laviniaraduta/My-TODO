@@ -100,6 +100,7 @@ class TaskAdapter(private val dao: TaskDatabaseDao): RecyclerView.Adapter<TaskAd
         val checkBox: CheckBox = itemView.findViewById(R.id.checkBox)
 
 
+        // make the checkBox display the correct state
         fun bind(item: Task) {
             checkBox.isChecked = item.isChecked
             checkBox.setOnClickListener {
