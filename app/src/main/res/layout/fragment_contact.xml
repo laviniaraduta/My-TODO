@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black">
+        android:background="?attr/colorSecondary">
 
         <ImageView
             android:id="@+id/aboutImage"
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="@color/yellow"
+            android:textColor="?attr/colorOnSecondary"
             android:textSize="32sp"
             android:layout_marginTop="30dp"
             app:fontFamily="@font/black_han_sans"
@@ -45,7 +45,8 @@
             android:layout_marginEnd="40dp"
             android:text="@string/author"
             android:textAlignment="center"
-            android:textColor="@color/yellow"
+            android:textColor="?attr/colorOnSecondary"
+
             android:textSize="20sp"
             app:fontFamily="@font/black_han_sans"
 
@@ -61,7 +62,7 @@
             android:layout_marginTop="48dp"
             android:text="@string/find_me"
             android:textAlignment="center"
-            android:textColor="@color/yellow"
+            android:textColor="?attr/colorOnSecondary"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,7 +75,7 @@
             android:layout_marginStart="-180dp"
             android:text="@string/author_github"
             android:textAlignment="center"
-            android:textColor="@color/yellow"
+            android:textColorLink="?attr/colorOnSecondary"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.529"
@@ -88,7 +89,8 @@
             android:layout_marginStart="10dp"
             android:text="@string/author_linkedin"
             android:textAlignment="center"
-            android:textColor="@color/yellow"
+            android:textColor="?attr/colorOnSecondary"
+            android:textColorLink="?attr/colorOnSecondary"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.474"

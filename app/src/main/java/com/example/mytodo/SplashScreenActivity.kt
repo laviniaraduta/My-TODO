@@ -11,7 +11,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.splash_screen)
+        setContentView(R.layout.activity_splash_screen)
 
         val content = findViewById<View>(android.R.id.content)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {

@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black">
+        android:background="?attr/colorSecondary">
 
         <ImageView
             android:id="@+id/aboutImage"
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textColor="@color/yellow"
+            android:textColor="?attr/colorOnSecondary"
             android:textSize="32sp"
             android:layout_marginTop="30dp"
             app:fontFamily="@font/black_han_sans"
@@ -44,7 +44,8 @@
             android:layout_marginEnd="40dp"
             android:text="@string/about_text"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSecondary"
             android:textSize="20sp"
 
 
