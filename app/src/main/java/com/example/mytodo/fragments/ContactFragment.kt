@@ -7,14 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.fragment.findNavController
 import com.example.mytodo.R
 import com.example.mytodo.databinding.FragmentAboutUsBinding
-import com.example.mytodo.databinding.FragmentEditTaskBinding
+import com.example.mytodo.databinding.FragmentContactBinding
 
-class AboutUsFragment : Fragment() {
-    private val TAG = "AboutUsFragment"
-    private lateinit var binding: FragmentAboutUsBinding
+class ContactFragment : Fragment() {
+    private val TAG = "ContactFragment"
+    private lateinit var binding: FragmentContactBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +25,9 @@ class AboutUsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_about_us, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_contact, container, false)
+        binding.github.movementMethod = LinkMovementMethod.getInstance()
+        binding.linkedin.movementMethod = LinkMovementMethod.getInstance()
         return binding.root
     }
 }
-

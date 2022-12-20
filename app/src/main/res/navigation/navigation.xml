@@ -46,4 +46,19 @@
             android:name="taskCategory"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentAboutUs"
+        android:name="com.example.mytodo.fragments.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/fragmentContact"
+        android:name="com.example.mytodo.fragments.ContactFragment"
+        android:label="fragment_contact"
+        tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/fragmentSettings"
+        android:name="com.example.mytodo.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

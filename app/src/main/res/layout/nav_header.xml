@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/navHeaderImage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/horizontal_margin"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/horizontal_margin"
@@ -21,6 +21,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/app_logo_foreground" />
+        app:srcCompat="@mipmap/app_logo_round" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
