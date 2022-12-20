@@ -1,10 +1,7 @@
 package com.example.mytodo.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 
 @Dao
 interface TaskDatabaseDao {
@@ -14,6 +11,9 @@ interface TaskDatabaseDao {
     @Update
     suspend fun update(task: Task)
 
+    @Delete
+    suspend fun deleteTask(task: Task)
+
     @Query("SELECT * from current_tasks_table WHERE taskTitle = :key")
     suspend fun get(key: String): Task?
 
@@ -21,5 +21,5 @@ interface TaskDatabaseDao {
     suspend fun clear()
 
     @Query("SELECT * FROM current_tasks_table ORDER BY taskTitle DESC")
-    fun getAllTasks(): LiveData<List<Task>>
+    fun getAllTasks(): LiveData<MutableList<Task>>
 }

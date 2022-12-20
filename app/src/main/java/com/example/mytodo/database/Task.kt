@@ -14,5 +14,8 @@ data class Task(
     @ColumnInfo(name = "due_date")
     var dueDate: String,
     @ColumnInfo(name = "category")
-    var category: String
+    var category: String,
+
+
+    var isChecked: Boolean = false
 )

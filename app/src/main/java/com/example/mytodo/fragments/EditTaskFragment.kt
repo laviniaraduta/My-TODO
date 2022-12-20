@@ -1,5 +1,7 @@
 package com.example.mytodo.fragments
 
+import android.app.DatePickerDialog
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
@@ -39,8 +41,30 @@ class EditTaskFragment : Fragment() {
         Log.d(TAG, "onCreateView: received ${args.taskTitle}")
         completeExistingInfo(args)
 
+        binding.editTextDueDate.setOnClickListener {
+
+            val dateEdit = binding.editTextDueDate
+            val calendar = java.util.Calendar.getInstance()
+            val year = calendar.get(Calendar.YEAR)
+            val month = calendar.get(Calendar.MONTH)
+            val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+            // set the calendar to current date
+            // get the selected date and put it in the text edit's text field
+            val datePicker = DatePickerDialog(this.requireContext(),
+                { _, y, m, d ->
+                    val realMonth = m + 1
+                    val monthString = realMonth.toString().padStart(2, '0')
+                    val date = "$y-$monthString-$d"
+                    dateEdit.setText(date)
+                },
+                year, month, day
+            )
+            datePicker.show()
+        }
+
         binding.saveButton.setOnClickListener { view: View ->
-            onSaveEditedTask()
+            onSaveEditedTask(args.taskTitle)
             view.findNavController().navigate(EditTaskFragmentDirections.actionEditTaskFragmentToMainScreenFragment())
         }
 
@@ -64,7 +88,7 @@ class EditTaskFragment : Fragment() {
 
     }
 
-    private fun onSaveEditedTask() {
+    private fun onSaveEditedTask(initialTitle: String) {
         Log.d(TAG, "onSaveEditedTask")
         val taskTitle: String = binding.editTextTitle.text.toString()
         val taskDescription: String = binding.editTextDescription.text.toString()
@@ -72,6 +96,6 @@ class EditTaskFragment : Fragment() {
         val taskCategory: String = binding.editTextCategory.selectedItem.toString()
 
 
-        viewModel.updateTask(taskTitle, taskDescription, taskDueDate, taskCategory)
+        viewModel.updateTask(initialTitle, taskTitle, taskDescription, taskDueDate, taskCategory)
     }
 }

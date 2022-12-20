@@ -15,18 +15,33 @@ class EditTaskViewModel (
     application: Application) : AndroidViewModel(application) {
     private val TAG = "EditTaskViewModel"
 
-    fun updateTask(taskTitle: String, taskDescription: String, taskDueDate: String, taskCategory: String) {
+    fun updateTask(initialTitle: String, taskTitle: String, taskDescription: String, taskDueDate: String, taskCategory: String) {
         Log.d(TAG, "received $taskTitle $taskDescription $taskDueDate $taskCategory ")
         viewModelScope.launch {
-            val task = database.get(taskTitle)
+            val task = database.get(initialTitle)
             if (task != null) {
-                task.taskTitle = taskTitle
-                task.taskDescription = taskDescription
-                task.dueDate = taskDueDate
-                task.category = taskCategory
-                update(task)
+                Log.d(TAG, "updateTask: task exists $initialTitle")
+                if (initialTitle.equals(taskTitle)) {
+                    task.taskDescription = taskDescription
+                    task.dueDate = taskDueDate
+                    task.category = taskCategory
+                    update(task)
+                } else {
+                    deleteTask(task)
+                    val newTask = Task(taskTitle, taskDescription, taskDueDate, taskCategory)
+                    insertTask(newTask)
+                }
+
             }
         }
+    }
+
+    private suspend fun deleteTask(task: Task) {
+        database.deleteTask(task)
+    }
+
+    private suspend fun insertTask(task: Task) {
+        database.insert(task)
     }
 
     private suspend fun update(task: Task) {

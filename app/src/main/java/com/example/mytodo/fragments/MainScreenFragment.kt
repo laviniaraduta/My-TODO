@@ -29,7 +29,7 @@ class MainScreenFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)[MainScreenViewModel::class.java]
 
         binding.lifecycleOwner = this
-        val adapter = TaskAdapter()
+        val adapter = TaskAdapter(dataSource)
         binding.tasksList.adapter = adapter
 
 
