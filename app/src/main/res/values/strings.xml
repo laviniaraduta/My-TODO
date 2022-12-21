@@ -39,6 +39,9 @@
     <string name="dark_mode_select">Dark mode</string>
     <string name="select_language">App language</string>
 
+    <string name="placeholder_name">Lavinia-Maria Raduta</string>
+    <string name="placeholder_email">lavinia.raduta@gmail.com</string>
+
 
     <string-array name="categories">
         <item>family</item>
