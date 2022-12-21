@@ -14,7 +14,7 @@ class SplashScreenActivity : AppCompatActivity() {
     private val TAG = "SplashScreenActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val sharedPref = getPreferences(Context.MODE_PRIVATE)
+        val sharedPref = getSharedPreferences("preferences_theme", MODE_PRIVATE)
         val editor = sharedPref?.edit()
 
         val state = sharedPref?.getBoolean("switchValue", false)

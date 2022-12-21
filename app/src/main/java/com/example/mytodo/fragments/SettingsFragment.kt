@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import com.example.mytodo.R
@@ -25,7 +26,7 @@ class SettingsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_settings, container, false)
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+        val sharedPref = activity?.getSharedPreferences("preferences_theme", AppCompatActivity.MODE_PRIVATE)
         val editor = sharedPref?.edit()
         val state = sharedPref?.getBoolean("switchValue", false)
         Log.d(TAG, "onCreateView: switchul are valoarea $state")
