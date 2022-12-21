@@ -43,4 +43,5 @@ class SettingsFragment : Fragment() {
         }
         return binding.root
     }
+
 }
