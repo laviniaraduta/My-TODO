@@ -15,22 +15,23 @@
         app:layout_constraintTop_toTopOf="parent"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="10dp"
-        app:cardBackgroundColor="?attr/colorSecondary">
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSecondary">
             <TextView
                 android:id="@+id/task_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginStart="20dp"
                 android:textSize="24sp"
-                android:textColor="?attr/colorOnSecondary"
                 app:fontFamily="sans-serif-black"
                 app:layout_constraintStart_toEndOf="@id/checkBox"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Task Title" />
+                tools:text="Task Title"
+                />
 
             <TextView
                 android:id="@+id/task_description"
@@ -38,7 +39,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:maxWidth="250dp"
-                android:textColor="?attr/colorOnSecondary"
                 app:layout_constraintBottom_toTopOf="@+id/due_date"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/task_title"
@@ -54,7 +54,6 @@
 
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginBottom="5dp"
-                android:textColor="?attr/colorOnSecondary"
                 tools:text="Due Date: 20/12/2022"/>
 
             <TextView
@@ -64,7 +63,6 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:textColor="?attr/colorOnSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/due_date"

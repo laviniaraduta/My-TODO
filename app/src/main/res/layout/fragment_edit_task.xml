@@ -13,8 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:background="?attr/colorPrimary">
+        android:padding="16dp">
 
         <TextView
             android:id="@+id/fragment_title"
@@ -24,7 +23,6 @@
             android:layout_marginTop="20dp"
             android:text="@string/edit_task"
             android:textSize="32sp"
-            android:textColor="?attr/colorOnPrimary"
             app:fontFamily="sans-serif-black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,7 +33,6 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_task_title"
             android:textSize="20sp"
-            android:textColor="?attr/colorOnPrimary"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/fragment_title" />
@@ -46,7 +43,6 @@
             android:layout_height="wrap_content"
             android:hint="@string/title_hint"
             android:inputType="text"
-            android:textColor="?attr/colorOnPrimary"
             android:minHeight="48dp"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
@@ -59,7 +55,6 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_task_description"
             android:textSize="20sp"
-            android:textColor="?attr/colorOnPrimary"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_title" />
@@ -70,7 +65,6 @@
             android:layout_height="wrap_content"
             android:hint="@string/description_hint"
             android:inputType="text"
-            android:textColor="?attr/colorOnPrimary"
             android:minHeight="48dp"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
@@ -83,7 +77,6 @@
             android:layout_height="wrap_content"
             android:text="@string/edit_task_date"
             android:textSize="20sp"
-            android:textColor="?attr/colorOnPrimary"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_description" />
@@ -93,7 +86,6 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:focusable="false"
-            android:textColor="?attr/colorOnPrimary"
             android:hint="@string/due_date_hint"
             android:inputType="date"
             android:minHeight="48dp"
@@ -107,7 +99,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/edit_category"
-            android:textColor="?attr/colorOnPrimary"
             android:textSize="20sp"
             android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="@+id/fragment_title"
@@ -118,7 +109,6 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint="@string/hint_category"
-            android:textColor="?attr/colorOnPrimary"
             android:inputType="text"
             android:minHeight="48dp"
             android:textSize="18sp"
@@ -130,7 +120,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save"
-            android:background="?attr/colorSecondaryVariant"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
