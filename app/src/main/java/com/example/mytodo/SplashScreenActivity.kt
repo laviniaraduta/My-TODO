@@ -28,8 +28,6 @@ class SplashScreenActivity : AppCompatActivity() {
             editor?.putBoolean("switchValue", false)?.apply()
         }
 
-
-
         setContentView(R.layout.activity_splash_screen)
 
         val content = findViewById<View>(android.R.id.content)
