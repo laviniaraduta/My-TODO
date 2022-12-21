@@ -27,7 +27,6 @@ class SplashScreenActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             editor?.putBoolean("switchValue", false)?.apply()
         }
-
         setContentView(R.layout.activity_splash_screen)
 
         val content = findViewById<View>(android.R.id.content)
