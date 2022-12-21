@@ -22,5 +22,7 @@ class SplashScreenActivity : AppCompatActivity() {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, 2000) // 2 seconds
+
+
     }
 }
