@@ -22,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         drawerLayout = binding.drawerLayout
+        setSupportActionBar(binding.myToolbar)
+        binding.myToolbar.title= "Tasks"
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this,navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
@@ -46,6 +48,8 @@ class MainActivity : AppCompatActivity() {
             .placeholder(R.drawable.app_logo_foreground)
             .fitCenter()
             .into(imageView)
+
+//        title = "Tasks"
 
     }
 

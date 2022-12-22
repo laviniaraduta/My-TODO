@@ -52,5 +52,10 @@
         <item>event</item>
     </string-array>
 
+    <string-array name="languages">
+        <item>english</item>
+        <item>romana</item>
+    </string-array>
+
 
 </resources>

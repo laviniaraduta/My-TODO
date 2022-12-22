@@ -1,17 +1,25 @@
 package com.example.mytodo.fragments
 
 import android.content.Context
+import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import com.example.mytodo.R
 import com.example.mytodo.databinding.FragmentSettingsBinding
+import android.widget.AdapterView.OnItemSelectedListener
+import androidx.annotation.RequiresApi
+import com.example.mytodo.MainActivity
+import java.util.*
 
 class SettingsFragment : Fragment() {
     private val TAG = "SettingsFragment"
@@ -21,6 +29,7 @@ class SettingsFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,6 +51,39 @@ class SettingsFragment : Fragment() {
                 editor?.putBoolean("switchValue", false)?.apply()
             }
         }
+
+        val languages = resources.getStringArray(R.array.languages)
+        val adapter = ArrayAdapter<String>(this.requireContext(), android.R.layout.simple_spinner_item, languages)
+        binding.spinner.adapter = adapter
+
+//        binding.spinner.setOnItemSelectedListener { parent, view, position, id ->
+//            val language = parent?.getItemAtPosition(position).toString()
+//            val locale = when (language) {
+//                "english" -> Locale.ENGLISH
+//                "romana" -> Locale.Builder().setLanguage("ro").setRegion("RO").build()
+//                else -> Locale.ENGLISH
+//            }
+//            setLocale(locale)
+//            activity?.recreate()
+//
+//        }
+
+        (activity as MainActivity).supportActionBar?.title = "Settings"
         return binding.root
     }
+
+    private fun setLocale(locale: Locale) {
+        val config = Configuration()
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar?.title = "Settings"
+    }
 }
+
+
+
+

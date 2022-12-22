@@ -14,6 +14,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.adapters.TextViewBindingAdapter.setText
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.example.mytodo.MainActivity
 import com.example.mytodo.R
 import com.example.mytodo.database.TaskDatabase
 import com.example.mytodo.databinding.FragmentEditTaskBinding
@@ -67,7 +68,7 @@ class EditTaskFragment : Fragment() {
             onSaveEditedTask(args.taskTitle)
             view.findNavController().navigate(EditTaskFragmentDirections.actionEditTaskFragmentToMainScreenFragment())
         }
-
+        (activity as MainActivity).supportActionBar?.title = "Edit Task"
         return binding.root
     }
 
@@ -97,5 +98,10 @@ class EditTaskFragment : Fragment() {
 
 
         viewModel.updateTask(initialTitle, taskTitle, taskDescription, taskDueDate, taskCategory)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar?.title = "Edit Task"
     }
 }

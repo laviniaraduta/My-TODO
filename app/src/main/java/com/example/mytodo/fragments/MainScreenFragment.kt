@@ -1,17 +1,20 @@
 package com.example.mytodo.fragments
 
-import androidx.lifecycle.ViewModelProvider
+import android.app.Activity
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.example.mytodo.MainActivity
 import com.example.mytodo.R
 import com.example.mytodo.database.TaskDatabase
 import com.example.mytodo.databinding.FragmentMainScreenBinding
 import com.example.mytodo.tasks.TaskAdapter
+
 
 class MainScreenFragment : Fragment() {
     private lateinit var binding: FragmentMainScreenBinding
@@ -45,6 +48,8 @@ class MainScreenFragment : Fragment() {
         binding.addTaskButton.setOnClickListener {
             view: View -> view.findNavController().navigate(MainScreenFragmentDirections.actionMainScreenFragmentToNewTaskFragment())
         }
+
+        (activity as MainActivity).supportActionBar?.title = "Tasks"
         return binding.root
     }
 
@@ -67,5 +72,10 @@ class MainScreenFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar?.title = "Tasks"
     }
 }

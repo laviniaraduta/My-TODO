@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import com.example.mytodo.MainActivity
 import com.example.mytodo.R
 import com.example.mytodo.databinding.FragmentAboutUsBinding
 import com.example.mytodo.databinding.FragmentContactBinding
@@ -28,6 +29,13 @@ class ContactFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_contact, container, false)
         binding.github.movementMethod = LinkMovementMethod.getInstance()
         binding.linkedin.movementMethod = LinkMovementMethod.getInstance()
+
+        (activity as MainActivity).supportActionBar?.title = "Contact"
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar?.title = "Contact"
     }
 }

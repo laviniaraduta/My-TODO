@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import com.example.mytodo.MainActivity
 import com.example.mytodo.R
 import com.example.mytodo.database.TaskDatabase
 import com.example.mytodo.databinding.FragmentNewTaskBinding
@@ -37,7 +38,7 @@ class NewTaskFragment: Fragment() {
         binding.lifecycleOwner = this
         binding.newTaskViewModel = viewModel
 
-
+        (activity as MainActivity).supportActionBar?.title = "New Task"
         return binding.root
     }
 
@@ -88,5 +89,10 @@ class NewTaskFragment: Fragment() {
 
 
         viewModel.addNewTask(taskTitle, taskDescription, taskDueDate, taskCategory)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).supportActionBar?.title = "New Task"
     }
 }

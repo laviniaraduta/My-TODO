@@ -13,7 +13,7 @@
         android:layout_height="155dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="-100dp"
-        android:src="@drawable/app_logo_foreground"
+        android:src="@mipmap/app_logo_round"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

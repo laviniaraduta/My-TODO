@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">My TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_us">Despre</string>
+    <string name="current_todos">Task-urile tale curente:</string>
+    <string name="add_task_button_text">Create new TODO</string>
+    <string name="clear_button_text">Sterge toate task-urile</string>
+    <string name="text_title">Adauga un titlu TODO-ului</string>
+    <string name="title_hint">Cumparaturi de Craciun</string>
+    <string name="create_new_task">Creeaza un nou task</string>
+    <string name="text_description">Adauga o descriere TODO-ului tau</string>
+    <string name="description_hint">Cumpara cadouri familiei</string>
+    <string name="text_due_date">Introdu data finalizarii TODO-ului</string>
+    <string name="due_date_hint">aaaa-LL-zz</string>
+    <string name="save">Salveaza</string>
+    <string name="due_date">Data finalizarii: %s</string>
+    <string name="floating_action_button">Adauga un nou task</string>
+    <string name="edit_task">Editeaza Task:</string>
+    <string name="edit_task_title">Editeaza titlul task-ului:</string>
+    <string name="edit_task_description">Editeaza descrierea task-ului:</string>
+    <string name="edit_task_date">Editeaza data finalizarii task-ului:</string>
+    <string name="category">Alege categoria:</string>
+    <string name="edit_category">Editeaza categoria task-ului:</string>
+    <string name="hint_category">chores</string>
+    <string name="about_text">Aceasta aplicatie te va ajuta sa iti pastrezi la un loc toate task-urile indiferent de tipul lor. Poti adauga task-uri noi sau sa le editezi pe cele deja existente (titlu, descriere, categorie sau data finalizarii).\nAceasta aplicatie reprezinta proiectul final din cadrul cursului Android Fundamentals in Kotlin</string>
+    <string name="author">Aceasta aplicatie a fost creata de\nRaduta Lavinia-Maria\nDecembrie 2022</string>
+    <string name="find_me">Ma poti gasi pe:</string>
+    <string name="author_github"><a href="https://github.com/laviniaraduta">GitHub</a></string>
+    <string name="author_linkedin"><a href="https://www.linkedin.com/in/lavinia-maria-raduta-849197224/">LinkedIn</a></string>
+
+    <string name="share">Share</string>
+    <string name="contact">Contact</string>
+    <string name="settings">Setari</string>
+
+
+    <string name="app_settings">Setarile aplicatiei</string>
+    <string name="dark_mode">Activeaza modul de noapte</string>
+    <string name="dark_mode_select">Modul de noapte</string>
+    <string name="select_language">Limba aplicatiei</string>
+
+    <string name="placeholder_name">Lavinia-Maria Raduta</string>
+    <string name="placeholder_email">lavinia.raduta@gmail.com</string>
+
+
+    <string-array name="categories">
+        <item>familie</item>
+        <item>scoala</item>
+        <item>sarcini casnice</item>
+        <item>voluntariat</item>
+        <item>ingrijire personala</item>
+        <item>eveniment</item>
+    </string-array>
+
+    <string-array name="languages">
+        <item>english</item>
+        <item>romana</item>
+    </string-array>
+
+
+</resources>
